@@ -2,7 +2,7 @@ package one.digitalinnovation.cloudparking.model;
 
 import java.time.LocalDateTime;
 
-public class Parking {
+public class parking {
 
     private String id;
     private String license;
@@ -13,7 +13,7 @@ public class Parking {
     private LocalDateTime exitDate;
     private double bill;
 
-    public Parking(Object id, String s, String sc, String celta, String preto) {
+    public parking(Object id, String license, String state, String model, String color) {
         this.id = this.id;
         this.license = license;
         this.state = state;
@@ -21,7 +21,7 @@ public class Parking {
         this.color = color;
     }
 
-    public Parking() {
+    public parking() {
 
     }
 
