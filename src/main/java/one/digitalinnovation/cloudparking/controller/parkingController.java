@@ -1,0 +1,34 @@
+package one.digitalinnovation.cloudparking.controller;
+
+import one.digitalinnovation.cloudparking.controller.dto.parkingDTO;
+import one.digitalinnovation.cloudparking.controller.mapper.ParkingMapper;
+import one.digitalinnovation.cloudparking.services.parkingServices;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import one.digitalinnovation.cloudparking.model.Parking;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/parking")
+public class parkingController {
+
+    private final parkingServices parkingService;
+    private final ParkingMapper parkingMapper;
+
+    public parkingController(parkingServices parkingService, ParkingMapper parkingMapper) {
+        this.parkingService = parkingService;
+        this.parkingMapper = parkingMapper;
+    }
+
+    @GetMapping
+    public List<parkingDTO> findAll() {
+        List<Parking> parkingList = parkingService.findAll();
+        List<parkingDTO> result = parkingMapper.toParkingDTOList(parkingList);
+        return result;
+    }
+
+}
+
