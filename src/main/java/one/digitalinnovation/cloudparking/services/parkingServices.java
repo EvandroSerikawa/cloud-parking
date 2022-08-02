@@ -23,7 +23,6 @@ public class parkingServices {
 
     }
 
-
     private static String getUUID() {
         return UUID.randomUUID().toString().replace("-", "");
     }

@@ -1,7 +1,6 @@
 package one.digitalinnovation.cloudparking.controller;
 
 import one.digitalinnovation.cloudparking.controller.dto.parkingDTO;
-import one.digitalinnovation.cloudparking.controller.mapper.ParkingMapper;
 import one.digitalinnovation.cloudparking.services.parkingServices;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,9 +15,9 @@ import java.util.List;
 public class parkingController {
 
     private final parkingServices parkingService;
-    private final ParkingMapper parkingMapper;
+    private final one.digitalinnovation.cloudparking.controller.mapper.parkingMapper parkingMapper;
 
-    public parkingController(parkingServices parkingService, ParkingMapper parkingMapper) {
+    public parkingController(parkingServices parkingService, one.digitalinnovation.cloudparking.controller.mapper.parkingMapper parkingMapper) {
         this.parkingService = parkingService;
         this.parkingMapper = parkingMapper;
     }
