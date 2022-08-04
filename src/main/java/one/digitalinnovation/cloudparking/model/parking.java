@@ -13,12 +13,8 @@ public class parking {
     private LocalDateTime exitDate;
     private double bill;
 
-<<<<<<< HEAD:src/main/java/one/digitalinnovation/cloudparking/model/parking.java
     public parking(Object id, String license, String state, String model, String color) {
-=======
-    public Parking(Object id, String license, String state, String model, String color) {
->>>>>>> 7cbb0e7ea1cb80afc794fe34e6b9b1c6c8f4fff2:src/main/java/one/digitalinnovation/cloudparking/model/Parking.java
-        this.id = this.id;
+        this.id = getId();
         this.license = license;
         this.state = state;
         this.model = model;
