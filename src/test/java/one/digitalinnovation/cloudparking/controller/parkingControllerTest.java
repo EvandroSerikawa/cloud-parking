@@ -27,15 +27,12 @@ class parkingControllerTest {
     void whenfindAllThenCheckResult() {
         RestAssured.given()
                 .when()
-                .get()
+                .get("/parking")
                 .then()
-                .statusCode(200)
-                .body("license[0]" , Matchers.equalTo("DMS-1111"));
+                .statusCode(HttpStatus.CREATED.value());
     }
-
     @Test
-    void whenCreateThenCheckIsCreated() {
-
+    void whenCreateThenCheckIsCreated(){
         var createDTO = new parkingCreateDTO();
         createDTO.setColor("Branco");
         createDTO.setLicense("DMS - 1111");
