@@ -18,7 +18,7 @@ class parkingControllerTest {
 
     @BeforeEach
     public void setUpTest(){
-        System.out.println(randomPort);
+        //System.out.println(randomPort);
         RestAssured.port = randomPort;
     }
 
@@ -29,13 +29,13 @@ class parkingControllerTest {
                 .when()
                 .get("/parking")
                 .then()
-                .statusCode(HttpStatus.CREATED.value());
+                .statusCode(HttpStatus.OK.value());
     }
     @Test
     void whenCreateThenCheckIsCreated(){
         var createDTO = new parkingCreateDTO();
         createDTO.setColor("Branco");
-        createDTO.setLicense("DMS - 1111");
+        createDTO.setLicense("DMS-1111");
         createDTO.setModel("GOL");
         createDTO.setState("SP");
 
@@ -47,7 +47,7 @@ class parkingControllerTest {
                 .then()
                 .statusCode(HttpStatus.CREATED.value())
                 .body("license[0]" , Matchers.equalTo("DMS-1111"))
-                .body("color[0]" , Matchers.equalTo("BRANCO"));
+                .body("color[0]" , Matchers.equalTo("Branco"));
 
     }
 }
